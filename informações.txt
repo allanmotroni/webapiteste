@@ -1,0 +1,20 @@
+= Container name =
+sql-server-teste
+
+= Volume =
+sql-server-teste-data
+
+= Server / Host name =
+sql-server
+
+= Database =
+testedb
+
+= Tabela=
+Teste
+
+= Colunas =
+Id
+Descricao
+DataCriacao
+DataAlteracao

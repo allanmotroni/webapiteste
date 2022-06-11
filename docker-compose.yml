@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  web-api-teste-app:
+    build:
+      context: .
+    ports:
+      - 8087:80
+    networks:
+      - my-network
+    depends_on:
+      - web-api-teste-db
+    container_name: web-app-teste
+
+  web-api-teste-db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Mudar@123
+    networks:
+      - my-network
+    ports:
+      - 1433:1433
+    container_name: web-app-teste-db
+    hostname: db
+
+networks:
+  my-network:
+    driver: bridge

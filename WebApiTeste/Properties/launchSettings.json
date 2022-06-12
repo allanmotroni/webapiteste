@@ -14,7 +14,11 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DATABASE_SERVER": ".",
+        "DATABASE_NAME": "testedb",
+        "DATABASE_LOGIN": "sa",
+        "DATABASE_PASSWORD": "Mudar@123"
       }
     },
     "WebApiTeste": {
@@ -22,7 +26,11 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DATABASE_SERVER": ".",
+        "DATABASE_NAME": "testedb",
+        "DATABASE_LOGIN": "sa",
+        "DATABASE_PASSWORD": "Mudar@123"
       },
       "dotnetRunMessages": "true",
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
@@ -32,7 +40,13 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "publishAllPorts": true,
-      "httpPort": 5000
+      "httpPort": 5000,
+      "environmentVariables": {        
+        "DATABASE_SERVER": "web-api-teste-db",
+        "DATABASE_NAME": "testedb",
+        "DATABASE_LOGIN": "sa",
+        "DATABASE_PASSWORD": "Mudar@123"
+      }
     }
   }
 }

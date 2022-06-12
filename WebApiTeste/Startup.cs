@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using System;
 using WebApiTeste.Application.Services;
 using WebApiTeste.Application.Services.Interfaces;
 using WebApiTeste.Domain.Repositories;
@@ -33,12 +35,13 @@ namespace WebApiTeste
 
             services.AddDbContext<DatabaseContext>(opt =>
             {
-                var server = Configuration.GetConnectionString("DATABASE_SERVER");
-                var database = Configuration.GetConnectionString("DATABASE_NAME");
-                var login = Configuration.GetConnectionString("DATABASE_LOGIN");
-                var password = Configuration.GetConnectionString("DATABASE_PASSWORD");
+                var server = Environment.GetEnvironmentVariable("DATABASE_SERVER");
+                var database = Environment.GetEnvironmentVariable("DATABASE_NAME");
+                var login = Environment.GetEnvironmentVariable("DATABASE_LOGIN");
+                var password = Environment.GetEnvironmentVariable("DATABASE_PASSWORD");
 
                 var connectionString = $"Server={server};Database={database};User Id={login};Password={password};MultipleActiveResultSets=True;";
+
                 opt.UseSqlServer(connectionString);
             });
 

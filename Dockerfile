@@ -26,4 +26,11 @@ RUN dotnet publish -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+ENV DATABASE_SERVER web-api-teste-db
+ENV DATABASE_NAME testedb
+ENV DATABASE_LOGIN sa
+ENV DATABASE_LOGIN sa
+ENV DATABASE_PASSWORD Mudar@123
+
 ENTRYPOINT ["dotnet", "WebApiTeste.dll"]

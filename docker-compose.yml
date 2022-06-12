@@ -12,10 +12,7 @@ services:
     container_name: web-app-teste
 
   web-api-teste-db:
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Mudar@123
+    build: ./db
     networks:
       - my-network
     ports:
